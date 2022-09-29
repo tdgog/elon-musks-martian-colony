@@ -23,7 +23,7 @@ const pages = {
     'Food & Drink': 'food',
     'Pets': 'pets'
 }
-const settings = ['Account', 'Remaining Debt']
+// const settings = ['Account', 'Remaining Debt']
 
 function SmallScreenMenu({ handleOpenNavigationMenu, handleCloseNavigationMenu, anchorElNavigation }) {
     let navigate = useNavigate();
@@ -85,7 +85,7 @@ function LargeScreenMenu({ handleCloseNavigationMenu }) {
                     navigate(pages[page]);
                 }}
                 className={`
-                    mx-1 px-3 py-1 rounded-lg block transition-all
+                    mx-1 px-3 py-1 rounded-lg select-none block transition-all
                     hover:bg-[rgba(0,0,0,.1)] bg-[rgba(0,0,0,0)]
 
                     ${currentPath.substring(1) === pages[page] ? 'text-white' : 'text-zinc-400'}
@@ -124,7 +124,7 @@ function Logo({ isLargeScreen }) {
             <path class="fill-white" d="M308.8,34.3c-2.5,1.7-5,3.6-7.4,5.4l13,9.5h14.7L308.8,34.3z"></path>
         </g>
         <g class="letter_swoosh">
-            <path class="fill-white" d="M399,0.7c-80,4.6-117,38.8-125.3,46.9l-1.7,1.6h14.8C326.8,9.1,384.3,2,399,0.7L399,0.7z"></path>
+            <path class="fill-blue-400" d="M399,0.7c-80,4.6-117,38.8-125.3,46.9l-1.7,1.6h14.8C326.8,9.1,384.3,2,399,0.7L399,0.7z"></path>
         </g>
     </svg>
 
@@ -138,38 +138,41 @@ function Logo({ isLargeScreen }) {
 }
 
 function AccountButton({ handleOpenUserMenu, handleCloseUserMenu, anchorElUser }) {
-    return <Box sx={{ flexGrow: 0 }}>
-        <Tooltip title="Your Account">
-            <IconButton onClick={handleOpenUserMenu} className='p-0'>
-                <Avatar alt="Tempuser" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/15E47/production/_124717698_gettyimages-1395200655.jpg" />
-            </IconButton>
-        </Tooltip>
-        <Menu
-            className={`
-                mt-12
-                [&>.MuiPaper-root]:bg-zinc-300
-                dark:[&>.MuiPaper-root]:bg-zinc-700 dark:[&>.MuiPaper-root]:text-zinc-300
-            `}
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-        >
-            {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-            ))}
-        </Menu>
-    </Box>
+    let navigate = useNavigate();
+    
+    return <Tooltip title="Your Account">
+        <IconButton onClick={() => navigate('account')} className='p-0'>
+            <Avatar alt="Tempuser" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/15E47/production/_124717698_gettyimages-1395200655.jpg" />
+        </IconButton>
+    </Tooltip>
+    // return <Box sx={{ flexGrow: 0 }}>
+    //     
+    //     <Menu
+    //         className={`
+    //             mt-12
+    //             [&>.MuiPaper-root]:bg-zinc-300
+    //             dark:[&>.MuiPaper-root]:bg-zinc-700 dark:[&>.MuiPaper-root]:text-zinc-300
+    //         `}
+    //         anchorEl={anchorElUser}
+    //         anchorOrigin={{
+    //             vertical: 'top',
+    //             horizontal: 'right',
+    //         }}
+    //         keepMounted
+    //         transformOrigin={{
+    //             vertical: 'top',
+    //             horizontal: 'right',
+    //         }}
+    //         open={Boolean(anchorElUser)}
+    //         onClose={handleCloseUserMenu}
+    //     >
+    //         {settings.map((setting) => (
+    //             <MenuItem key={setting} onClick={handleCloseUserMenu}>
+    //                 <Typography textAlign="center">{setting}</Typography>
+    //             </MenuItem>
+    //         ))}
+    //     </Menu>
+    // </Box>
 }
 
 export default function Navigation() {
