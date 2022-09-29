@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-    AppBar,
     Box,
     Toolbar,
     IconButton,
@@ -8,7 +7,6 @@ import {
     Menu,
     Container,
     Avatar,
-    Button,
     Tooltip,
     MenuItem,
 } from '@mui/material';
@@ -16,6 +14,8 @@ import {
     Menu as MenuIcon
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom';
+import logo from '../images/SpaceXLogo.png';
+
 
 const pages = {
     'Home': '',
@@ -78,7 +78,6 @@ function LargeScreenMenu({ handleCloseNavigationMenu }) {
 
     return <Box className='hidden md:flex' sx={{ flexGrow: 1 }}>
         {Object.keys(pages).map((page) => {
-            console.log(currentPath.substring(1), pages[page], currentPath.substring(1) === pages[page] && 'text-white');
             return <button
                 key={page}
                 onClick={() => {
@@ -101,10 +100,10 @@ function LargeScreenMenu({ handleCloseNavigationMenu }) {
 function Logo({ isLargeScreen }) {
     return isLargeScreen 
         ? <div className='hidden md:flex'>
-            <img src='https://assets.stickpng.com/images/5842a770a6515b1e0ad75afe.png' className='h-10' alt='Logo' />
+            <img src={logo} className='h-10' alt='SpaceX' />
         </div> 
         : <Box className='flex md:hidden' sx={{ flexGrow: 1 }}>
-            <img src='https://assets.stickpng.com/images/5842a770a6515b1e0ad75afe.png' className='h-10' alt='Logo' />
+            <img src={logo} className='h-10' alt='SpaceX' />
         </Box>
 }
 
