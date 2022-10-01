@@ -53,11 +53,11 @@ function SmallScreenMenu({ handleOpenNavigationMenu, handleCloseNavigationMenu, 
             }}
             open={Boolean(anchorElNavigation)}
             onClose={handleCloseNavigationMenu}
-            className={`
+            className='
                 mt-1
                 [&>.MuiPaper-root]:bg-zinc-300
                 dark:[&>.MuiPaper-root]:bg-zinc-700 dark:[&>.MuiPaper-root]:text-zinc-300
-            `}
+            '
         >
             {Object.keys(pages).map((page) => (
                 <MenuItem key={page} onClick={() => {
