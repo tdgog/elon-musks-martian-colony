@@ -9,10 +9,18 @@ function TabPanel ({ children, value, index }) {
     </div>
 }
 
+function getLocation() {
+    let hash = window.location.hash;
+    hash = hash.substring(1, hash.length);
+    return hash || 'profile';
+}
+
 export default function Account() {
-    const [tab, setTab] = useState(0);
+    const [tab, setTab] = useState(getLocation());
     const updateTab = (event, newTab) => {
+        console.log(tab, newTab)
         setTab(newTab);
+        window.history.pushState("object or string", "Title", `/account#${newTab}`)
     }
 
     return <div className='w-screen h-screen bg-zinc-100 flex'>
@@ -20,15 +28,16 @@ export default function Account() {
             value={tab} onChange={updateTab}
             orientation='vertical' variant='scrollable'
             className='bg-zinc-800'
+            selectionFollowsFocus
         >
-            <Tab label='Profile' />
-            <Tab label='Employment' />
+            <Tab label='Profile' value='profile'/>
+            <Tab label='Employment' value='employment'/>
         </Tabs>
         <div className='bg-zinc-700 flex grow p-3'>
-            <TabPanel value={tab} index={0}>
+            <TabPanel value={tab} index={'profile'}>
                 <Profile />
             </TabPanel>
-            <TabPanel value={tab} index={1}>
+            <TabPanel value={tab} index={'employment'}>
                 <Employment />
             </TabPanel>
         </div>

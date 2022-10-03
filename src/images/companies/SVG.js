@@ -1,4 +1,5 @@
-<svg xmlnsDc="http://purl.org/dc/elements/1.1/" xmlnsCc="http://creativecommons.org/ns#" xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlnsSvg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="svg1001373" viewBox="0 0 1024 768" height="768px" width="1024px" version="1.1">
+export default function Exomining() {
+    return <svg xmlnsDc="http://purl.org/dc/elements/1.1/" xmlnsCc="http://creativecommons.org/ns#" xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlnsSvg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="svg1001373" viewBox="0 0 1024 768" height="768px" width="1024px" version="1.1">
         <metadata id="metadata1001379">
             <rdfRdf>
                 <ccWork rdfAbout="">
@@ -22,3 +23,4 @@
             </g>
         </g>
     </svg>
+}
