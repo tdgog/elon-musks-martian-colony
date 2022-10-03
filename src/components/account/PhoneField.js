@@ -22,6 +22,7 @@ export default class PhoneField extends React.Component {
             helperText={this.state.helperText}
             onChange={this.onChange.bind(this)}
             error={this.state.error}
+            defaultValue={this.props.defaultValue}
         />
     }
 }

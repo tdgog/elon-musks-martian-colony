@@ -14,8 +14,6 @@ import {
     Menu as MenuIcon
 } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom';
-import logo from '../images/SpaceXLogo.png';
-
 
 const pages = {
     'Home': '',
@@ -133,7 +131,7 @@ function Logo({ isLargeScreen }) {
             <LogoSVG />
         </div>
         : <Box className='flex md:hidden' sx={{ flexGrow: 1 }}>
-            <img src={logo} className='h-10' alt='SpaceX' />
+            <LogoSVG />
         </Box>
 }
 
@@ -142,37 +140,9 @@ function AccountButton({ handleOpenUserMenu, handleCloseUserMenu, anchorElUser }
     
     return <Tooltip title="Your Account">
         <IconButton onClick={() => navigate('account')} className='p-0'>
-            <Avatar alt="Tempuser" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/15E47/production/_124717698_gettyimages-1395200655.jpg" />
+            <Avatar alt="Tempuser" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmYtjP-Ey1Yd4Ix3FqFp1lW6SuX4MsVzhBNw&usqp=CAU" />
         </IconButton>
     </Tooltip>
-    // return <Box sx={{ flexGrow: 0 }}>
-    //     
-    //     <Menu
-    //         className={`
-    //             mt-12
-    //             [&>.MuiPaper-root]:bg-zinc-300
-    //             dark:[&>.MuiPaper-root]:bg-zinc-700 dark:[&>.MuiPaper-root]:text-zinc-300
-    //         `}
-    //         anchorEl={anchorElUser}
-    //         anchorOrigin={{
-    //             vertical: 'top',
-    //             horizontal: 'right',
-    //         }}
-    //         keepMounted
-    //         transformOrigin={{
-    //             vertical: 'top',
-    //             horizontal: 'right',
-    //         }}
-    //         open={Boolean(anchorElUser)}
-    //         onClose={handleCloseUserMenu}
-    //     >
-    //         {settings.map((setting) => (
-    //             <MenuItem key={setting} onClick={handleCloseUserMenu}>
-    //                 <Typography textAlign="center">{setting}</Typography>
-    //             </MenuItem>
-    //         ))}
-    //     </Menu>
-    // </Box>
 }
 
 export default function Navigation() {
