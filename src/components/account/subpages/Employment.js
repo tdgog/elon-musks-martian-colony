@@ -25,14 +25,7 @@ const jobData = [
         logo: require('../../../images/companies/exomining.svg'),
         salary: '¤ 3.54',
         tasks: [
-            {
-                name: 'Investigate GSE Tank Methane Leak',
-                desc: 'Investigate and propose a solution to the leaking methane ground support equipment tank at 77.33791351, 18.45062644.'
-            },
-            {
-                name: 'Attach New Common Dome',
-                desc: 'Weld the common dome for connecting the Methane and LOx tanks to Starship SN-5028 at coordinates 77.63791731, 18.35032645.'
-            }
+            
         ]
     }
 ]
