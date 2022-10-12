@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        starship: 'url("../images/starship-spacex.webp")',
+        starship: 'url("../src/images/starship.webp")',
       }
     },
   },
