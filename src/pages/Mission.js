@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import VerticalListElement from "../components/Table";
 
 export default function Mission() {
     const { state } = useLocation();
@@ -17,5 +18,7 @@ export default function Mission() {
         </div>
         <p className='text-zinc-500 mt-15'>5 OCTOBER, 2022</p>
         <p className='text-2xl text-zinc-100'>CREW-5 MISSION</p>
+
+        <VerticalListElement />
     </div>
 }
